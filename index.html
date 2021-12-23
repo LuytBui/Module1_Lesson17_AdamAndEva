@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="human.js"></script>
+    <script src="apple.js"></script>
+</head>
+<body>
+
+<script>
+    let Adam = new Human ('Adam', 'male', 67);
+    let Eva = new Human ('Eva', 'female', 52);
+    let apple = new Apple();
+
+    showWeight(Adam);
+    document.write(`${Adam._name} sees an apple.<br>`);
+    showWeight(apple);
+    document.write(`${Adam._name} sees ${Eva._name}.<br>`);
+    showWeight(Eva);
+    Adam.talk();
+    Eva.talk();
+
+    Eva.eatApple(apple);
+    showWeight(Eva);
+    Adam.eatApple(apple);
+    showWeight(Adam);
+    showWeight(apple);
+
+    Adam.speech = `${Adam.name} says: You are very beautiful.`;
+    Adam.talk();
+    Eva.speech = `${Eva.name} says: Hihihi. Thank you.`;
+    Eva.eatApple(apple);
+    Eva.talk();
+
+
+    function showWeight(thing){
+        document.write(`${thing.name} weights ${thing.weight}.<br>`);
+    }
+</script>
+</body>
+</html>
